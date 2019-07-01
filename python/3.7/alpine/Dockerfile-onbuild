@@ -1,6 +1,6 @@
 FROM rbsdev/python:3.7-alpine3.9
 
-ONBUILD COPY requirements.txt /usr/src/app/
+ONBUILD COPY requirements.txt /app/
 ONBUILD RUN pip install --no-cache-dir -r requirements.txt
 ONBUILD RUN apk del .build-deps
 ONBUILD COPY . /app
