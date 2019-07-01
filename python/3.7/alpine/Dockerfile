@@ -11,8 +11,3 @@ RUN apk add --no-cache git curl
 CMD [ "python", "-dutt", "app.py" ]
 
 WORKDIR /app
-
-ONBUILD COPY requirements.txt /usr/src/app/
-ONBUILD RUN pip install --no-cache-dir -r requirements.txt
-ONBUILD RUN apk del .build-deps
-ONBUILD COPY . /app
