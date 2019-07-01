@@ -8,8 +8,6 @@ RUN apk del tzdata
 RUN apk add --no-cache --virtual .build-deps gcc musl-dev libffi-dev openssl-dev
 RUN apk add --no-cache git curl
 
-CMD [ "python", "-dutt", "app.py" ]
-
 WORKDIR /app
 
 ONBUILD ARG GIT_SSL_NO_VERIFY
@@ -17,3 +15,5 @@ ONBUILD COPY requirements.txt /app/
 ONBUILD RUN pip install --no-cache-dir -r requirements.txt
 ONBUILD RUN apk del .build-deps
 ONBUILD COPY . /app
+
+CMD [ "python", "-dutt", "app.py" ]
