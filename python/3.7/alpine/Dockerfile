@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM python:3.7-alpine3.9
 
 RUN apk add --no-cache tzdata
 RUN cp /usr/share/zoneinfo/GMT-0 /etc/localtime
